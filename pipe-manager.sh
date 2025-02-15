@@ -82,7 +82,7 @@ ExecStart=/opt/pop/pop \\
     --pubKey ${SOLANA_KEY} \\
     --max-disk ${DISK_SIZE} \\
     --cache-dir ${CACHE_DIR} \\
-    --no-prompt
+    --signup-by-referral-route ${referral_code}
 Restart=always
 RestartSec=5
 LimitNOFILE=65536
