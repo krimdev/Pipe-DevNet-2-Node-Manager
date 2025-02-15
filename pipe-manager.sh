@@ -31,14 +31,16 @@ get_node_id() {
 # Validate Solana address
 validate_solana_address() {
     local address="$1"
+    
     # Remove all whitespace
     address=$(echo "$address" | tr -d '[:space:]')
     
-    # Check if address is 32-44 characters long and contains only valid base58 characters
-    if [[ "$address" =~ ^[1-9A-HJ-NP-Za-km-z]{32,44}$ ]]; then
+    # Check if address is exactly 44 characters long and contains only valid base58 characters
+    if [[ ${#address} -eq 44 && "$address" =~ ^[1-9A-HJ-NP-Za-km-z]+$ ]]; then
         echo "$address"
         return 0
     else
+        echo "Invalid Solana address"
         return 1
     fi
 }
