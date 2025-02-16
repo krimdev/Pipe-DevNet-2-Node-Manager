@@ -287,7 +287,7 @@ install_node() {
         if [ -z "$valid_address" ]; then
             echo -e "${RED}Error: Invalid Solana address. Please check your address and try again.${NC}"
             echo -e "${YELLOW}Make sure your address:${NC}"
-            echo -e "  - Is 32-44 characters long"
+            echo -e "  - Is 44 characters long"
             echo -e "  - Contains only valid characters (no spaces or special characters)"
             echo -e "  - Is copied correctly from your wallet"
         fi
